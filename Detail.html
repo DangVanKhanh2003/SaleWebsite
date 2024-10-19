@@ -250,21 +250,21 @@
         <div class="col-md-6 border-end">
           <div class="d-flex flex-column justify-content-center">
             <div class="main_image">
-              <img src="images/productImg/sp1_1.jfif" id="main_product_image" width="350">
+              <img  id="main_product_image" width="350">
             </div>
             <div class="thumbnail_images">
               <ul id="thumbnail">
                 <li>
-                  <img class="thumbnail" src="images/productImg/sp1_1.jfif" width="70">
+                  <img class="thumbnail" id="img1"  width="70">
                 </li>
                 <li>
-                  <img class="thumbnail" src="images/productImg/sp1_2.jfif" width="70">
+                  <img class="thumbnail" id="img2"  width="70">
                 </li>
                 <li>
-                  <img class="thumbnail" src="images/productImg/sp1_1.jfif" width="70">
+                  <img class="thumbnail" id="img3"  width="70">
                 </li>
                 <li>
-                  <img class="thumbnail" src="images/productImg/sp1_2.jfif" width="70">
+                  <img class="thumbnail" id="img4" width="70">
                 </li>
               </ul>
             </div>
@@ -282,7 +282,7 @@
             <h2 style="color: #e81224dd;" class="m-0 detail-price"></h2>
             <i style="color: rgb(30, 142, 197);">(Giá chưa bao gồm phí vận chuyển)</i>
             <div class="buttons d-flex flex-row mt-5 gap-3">
-              <a href="https://web.facebook.com/thaomin4397">
+              <a href="https://web.facebook.com/thaomin4397" target="_blank">
                 <button class="btn btn-outline-dark">LIên hệ ngay</button>
               </a>
             </div>
@@ -298,6 +298,15 @@
     $(document).ready(function() {
 
       var nameID = sessionStorage.getItem('nameID');
+      var img1 = "images/productImg/" + nameID + "_1.jfif";
+      var img2 = "images/productImg/" + nameID + "_2.jfif";
+      var img3 = "images/productImg/" + nameID + "_3.jfif";
+      var img4 = "images/productImg/" + nameID + "_4.jfif";
+      $("#main_product_image").attr('src', img1); 
+      $("#img1").attr('src', img1); 
+      $("#img2").attr('src', img2); 
+      $("#img3").attr('src', img3); 
+      $("#img4").attr('src', img4); 
 
       if(nameID != null){
       $.get("Name/" + nameID + ".txt", function(data) {
