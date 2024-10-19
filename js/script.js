@@ -137,6 +137,18 @@
       keepImg: true,
     });
   }
+// Function to read file and pass content to callback
+function readFile(fileName, callback) {
+  $.get(fileName, function(data) {
+      // Replace newlines with <br> to maintain formatting
+      var formattedData = data.replace(/\n/g, '<br>');
+      // Call the callback function with the formatted file content
+      callback(formattedData);
+  }).fail(function() {
+      alert("Error: Unable to read file.");
+  });
+}
+
 
   // document ready
   $(document).ready(function() {
@@ -146,6 +158,18 @@
     initProductQty();
     initJarallax();
     initChocolat();
+
+
+
+     
+     // When a product item is clicked
+     $(".product-item").click(function(){
+       // Find the nameID inside the clicked product item
+       var nameID = $(this).find(".nameID").text();
+       sessionStorage.setItem('nameID', nameID);
+
+      });
+
 
   }); // End of a document
 
