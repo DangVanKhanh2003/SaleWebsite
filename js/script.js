@@ -149,7 +149,26 @@ function readFile(fileName, callback) {
   });
 }
 
-
+function searchProduct() {
+  // Lấy từ khóa tìm kiếm
+  var input = document.getElementById('searchInput').value.toLowerCase();
+  
+  // Lấy danh sách tất cả các sản phẩm
+  var products = document.querySelectorAll('.product-item');
+  
+  // Duyệt qua tất cả các sản phẩm
+  products.forEach(function(product) {
+    // Lấy tên sản phẩm
+    var productName = product.querySelector('.nameProduct').textContent.toLowerCase();
+    
+    // Kiểm tra nếu tên sản phẩm chứa từ khóa
+    if (productName.includes(input)) {
+      product.style.display = "block"; // Hiển thị sản phẩm
+    } else {
+      product.style.display = "none"; // Ẩn sản phẩm
+    }
+  });
+}
   // document ready
   $(document).ready(function() {
     
@@ -158,7 +177,7 @@ function readFile(fileName, callback) {
     initProductQty();
     initJarallax();
     initChocolat();
-
+    $("#searchIcon").click(searchProduct);
      // When a product item is clicked
      $(".product-item").click(function(){
        // Find the nameID inside the clicked product item
