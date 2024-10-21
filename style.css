@@ -57,7 +57,7 @@ CSS STRUCTURE:
   4.3 Brand Carousel
   4.4 Category Carousel
 
-5. BLOG STYLES
+5. BLOG STYLESprice
   5.1 Blog Single Post
   5.2 About Author
   5.3 Comments List
@@ -561,6 +561,7 @@ body{
   transition: box-shadow 0.3s ease-out;
   cursor:  pointer;
   overflow: hidden;
+
 }
 .product-item:hover {
   box-shadow: 0px 21px 44px rgba(0, 0, 0, 0.08);
@@ -627,7 +628,8 @@ body{
   font-size: 22px;
   line-height: 30px;
   text-transform: capitalize;
-  color: #222222;
+  color: #b32727;
+  height: 60px;
 }
 .product-item .product-qty {
   width: 85px;
@@ -678,7 +680,9 @@ body{
 .post-item .post-meta svg {
   margin-right: 5px;
 }
-
+.nav a:hover{
+  color: rgb(10, 136, 185);
+}
 @media screen and (max-width: 991px) {
   /* offcanvas menu */
   .offcanvas-body .nav-item {
