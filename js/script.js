@@ -159,9 +159,6 @@ function readFile(fileName, callback) {
     initJarallax();
     initChocolat();
 
-
-
-     
      // When a product item is clicked
      $(".product-item").click(function(){
        // Find the nameID inside the clicked product item
